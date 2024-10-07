@@ -1,20 +1,34 @@
-import { ToastPosition } from "../assets/type";
+import React, { useEffect, useState } from "react";
 
-const toastPosition: Record<ToastPosition, string> = {
-  "left-top": "",
-  "center-top": "",
-  "right-top": "",
-  "bottom-left": "",
-  "bottom-center": "",
-  "bottom-right": "",
+import Toast from "./Toast";
+import styles from "./Toast.module.css";
+import type { IToastArray, ToastPosition } from "../assets/type";
+import { subscribe } from "./toastManager";
+
+const toastPositionClass = {
+  "left-top": styles["left-top"],
+  "center-top": styles["center-top"],
+  "right-top": styles["right-top"],
+  "bottom-left": styles["bottom-left"],
+  "bottom-center": styles["bottom-center"],
+  "bottom-right": styles["bottom-right"],
 };
 
-export default function ToastContainer() {
+const ToastContainer = ({ position = "right-top" }: { position?: ToastPosition }) => {
+  const [toasts, setToasts] = useState<IToastArray[]>([]);
+
+  useEffect(() => {
+    const unsubscribe = subscribe(setToasts);
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <div>
-      {
-        // 반복 아이템 설정
-      }
+    <div className={`${styles["toast-parent"]} ${toastPositionClass[position]}`}>
+      {toasts.map((toast) => (
+        <Toast key={toast.id} type={toast.type} message={toast.message} />
+      ))}
     </div>
   );
-}
+};
+
+export default ToastContainer;

@@ -6,3 +6,13 @@ export interface ToastItem {
   message: string;
   type: ToastType;
 }
+
+export interface IToastProps {
+  type: "success" | "error";
+  message: string;
+  duration?: number;
+}
+
+export interface IToastArray extends IToastProps {
+  id: number;
+}

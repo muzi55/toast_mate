@@ -1,18 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import ToastContainer from "./components/ToastContainer";
-import Toast from "./components/Toast";
+import { addToast } from "./components/toastManager";
 
 function App() {
   return (
     <>
       <h1>React - Toast Mate</h1>
-
-      <button>Toast Popup</button>
-      <Toast type="error" message="watch me !" />
-      <Toast type="success" message="watch me !" />
+      <button onClick={() => addToast("해피해피니스")}>Toast Popup</button>
       <ToastContainer />
     </>
   );

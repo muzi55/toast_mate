@@ -1,11 +1,14 @@
-import type { ToastItem, ToastType } from "../assets/type";
+import React from "react";
 import styles from "./Toast.module.css";
+import type { IToastProps } from "../assets/type";
 
-const toastType: Record<ToastType, string> = {
-  success: "toast-success",
-  error: "toast-error",
+const toastTypeStyles = {
+  success: styles.toastSuccess,
+  error: styles.toastError,
 };
 
-export default function Toast({ message, type }: ToastItem) {
-  return <div className={`${styles["toast-Item"]} ${styles[toastType[type]]}`}>{message}</div>;
-}
+const Toast = ({ type, message }: IToastProps) => {
+  return <div className={`${styles.toastItem} ${toastTypeStyles[type]}`}>{message}</div>;
+};
+
+export default Toast;
