@@ -1,19 +1,23 @@
 {
   "compilerOptions": {
     "composite": true,
-    "target": "ES5",
-    "module": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "jsx": "react",
     "declaration": true,
-    "declarationDir": "./dist/types",
-    "outDir": "./dist",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": false
+    "moduleResolution": "bundler",
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": false, // noEmit을 false로 설정
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"]
+  "include": ["src"]
 }

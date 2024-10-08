@@ -1,5 +1,6 @@
 import styles from "./Toast.module.css";
-import type { IToastProps } from "../assets/type";
+
+import type { IToastProps } from "./type";
 
 const toastTypeStyles = {
   success: "toast-success",

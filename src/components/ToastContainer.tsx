@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 import Toast from "./Toast";
 import styles from "./Toast.module.css";
-import type { IToastArray, ToastPosition } from "../assets/type";
+
 import { subscribe } from "./toastManager";
+import type { IToastArray, ToastPosition } from "./type";
 
 const toastPositionClass = {
   "left-top": styles["left-top"],

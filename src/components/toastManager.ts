@@ -1,4 +1,4 @@
-import { IToastArray, IToastProps } from "/assets/type";
+import type { IToastArray, IToastProps } from "./type";
 
 let toasts: IToastArray[] = [];
 let listeners: ((toasts: IToastArray[]) => void)[] = [];

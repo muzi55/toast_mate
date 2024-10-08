@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "composite": true,
     "target": "ES5",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
@@ -15,7 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false
   },
-  "include": ["./src/lib/**/*.tsx", "./src/lib/**/*.ts"],
+  "include": ["./src/components/**/*.tsx", "./src/components/**/*.ts"],
   "files": [],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
 }
