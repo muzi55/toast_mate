@@ -4,12 +4,12 @@ let toasts: IToastArray[] = [];
 let listeners: ((toasts: IToastArray[]) => void)[] = [];
 
 export const addToast = (
-  toast: (IToastProps & { duration?: number }) | string = { type: "success", message: "", duration: 2000 }
+  toast: (IToastProps & { duration?: number }) | string = { type: "success", message: "", duration: 3000 }
 ) => {
   let toastWithDefaults: IToastProps & { duration?: number };
 
   if (typeof toast === "string") {
-    toastWithDefaults = { type: "success", message: toast, duration: 2000 };
+    toastWithDefaults = { type: "success", message: toast, duration: 3000 };
   } else {
     toastWithDefaults = {
       type: toast.type || "success",

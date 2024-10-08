@@ -39,8 +39,13 @@
   right: 10px;
 }
 
-.toast-Item {
+.toast-item {
+  border-radius: 4px;
   padding: 0.5rem 0.5em;
+  margin-bottom: 0.5rem;
+  &:last-child {
+    margin-bottom: 0px;
+  }
 }
 
 .toast-success {
