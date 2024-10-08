@@ -3,11 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "An easy-to-use and lightweight toast popup library for React applications",
+  "keywords": [
+    "react",
+    "component",
+    "toast",
+    "toast-popup",
+    "simple-toast"
+  ],
+  "author": "muzi55",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/muzi55/toast_mate.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "dependencies": {
     "react": "^18.3.1",
